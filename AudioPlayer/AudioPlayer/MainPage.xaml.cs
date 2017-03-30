@@ -1,5 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
+using System.Collections.Generic;
 
 namespace AudioPlayer
 {
@@ -12,6 +13,10 @@ namespace AudioPlayer
             BindingContext = new MainPageModelView();
 
             mainMenu.ItemSelected += OnItemSelected;
+
+            FileScanner f = new FileScanner();
+            List<string> l = new List<string>();
+            f.GetDirectory(l);
         }
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -24,5 +29,6 @@ namespace AudioPlayer
             IsPresented = false;
             mainMenu.SelectedItem = null;
         }
+
     }
 }

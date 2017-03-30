@@ -28,7 +28,7 @@
     <MasterDetailPage.Detail>
         <NavigationPage>
             <x:Arguments>
-                <local:FoldersView/>
+                <local:AllMusicView/>
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>

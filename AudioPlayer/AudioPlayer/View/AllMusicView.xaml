@@ -3,9 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AudioPlayer.AllMusicView">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Тут должен быть список всей музыки"/>
-        </StackLayout>
+        <ListView>
+            <Label Text="Тут должен быть список всей музыки, свайп для обновления"/>
+        </ListView>
     </ContentPage.Content>
 </ContentPage>
-    

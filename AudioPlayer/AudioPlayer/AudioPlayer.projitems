@@ -12,12 +12,16 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)DataSourceConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ModelView\AllMusicViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelView\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelView\MainPageModelView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\FileScanner.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\FlyoutMenuModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\IFileWorker.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)View\AlbumView.xaml.cs">
       <DependentUpon>AlbumView.xaml</DependentUpon>
       <SubType>Code</SubType>
