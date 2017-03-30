@@ -14,11 +14,15 @@ namespace AudioPlayer {
     using Xamarin.Forms.Xaml;
     
     
-    public partial class MainPage : global::Xamarin.Forms.ContentPage {
+    public partial class MainPage : global::Xamarin.Forms.MasterDetailPage {
+        
+        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        private global::Xamarin.Forms.ListView mainMenu;
         
         [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
             this.LoadFromXaml(typeof(MainPage));
+            mainMenu = this.FindByName<global::Xamarin.Forms.ListView>("mainMenu");
         }
     }
 }
