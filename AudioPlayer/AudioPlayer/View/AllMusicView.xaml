@@ -16,8 +16,7 @@
         <ListView ItemsSource="{Binding SongList}"
                   IsPullToRefreshEnabled="True"
                   RefreshCommand="{Binding LoadTrackCommand}"
-                  IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                  >
+                  IsRefreshing="{Binding IsBusy, Mode=OneWay}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
