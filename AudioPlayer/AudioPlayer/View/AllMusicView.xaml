@@ -1,10 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AudioPlayer.AllMusicView">
+             x:Class="AudioPlayer.AllMusicView"
+             xmlns:local="clr-namespace:AudioPlayer; assembly=AudioPlayer">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:DataSourceConverter x:Key="DataSourceConverter" />
+
+            <Style x:Key="EmptyList" TargetType="Label">
+                <Setter Property="TextColor" Value="Red" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <ListView>
-            <Label Text="Тут должен быть список всей музыки, свайп для обновления"/>
+        <ListView ItemsSource="{Binding SongList}"
+                  IsPullToRefreshEnabled="True"
+                  RefreshCommand="{Binding LoadTrackCommand}"
+                  IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                  >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout>
+                                <Label Text="{Binding SongPath}"/>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
     </ContentPage.Content>
 </ContentPage>
+    
+    
+    <!--
+                 <ListView.Style>
+    <Style>
+        <Style.Triggers>
+            <Trigger Property="HasItems" Value="False">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Label Text="Нет элементов"/>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    </ListView.Style>
+    -->
+

@@ -22,6 +22,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\FileScanner.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\FlyoutMenuModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\IFileWorker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Song.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)View\AlbumView.xaml.cs">
       <DependentUpon>AlbumView.xaml</DependentUpon>
       <SubType>Code</SubType>

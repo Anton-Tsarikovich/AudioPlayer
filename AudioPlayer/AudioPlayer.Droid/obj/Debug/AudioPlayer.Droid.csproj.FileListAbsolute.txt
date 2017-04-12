@@ -66,5 +66,5 @@ C:\Users\Anton\documents\visual studio 2017\Projects\AudioPlayer\AudioPlayer\Aud
 C:\Users\Anton\documents\visual studio 2017\Projects\AudioPlayer\AudioPlayer\AudioPlayer.Droid\obj\Debug\AudioPlayer.Droid.View.FoldersView.xaml.g.cs
 C:\Users\Anton\documents\visual studio 2017\Projects\AudioPlayer\AudioPlayer\AudioPlayer.Droid\obj\Debug\AudioPlayer.Droid.View.AlbumView.xaml.g.cs
 C:\Users\Anton\documents\visual studio 2017\Projects\AudioPlayer\AudioPlayer\AudioPlayer.Droid\obj\Debug\AudioPlayer.Droid.View.ArtistsView.xaml.g.cs
-C:\Users\Anton\documents\visual studio 2017\Projects\AudioPlayer\AudioPlayer\AudioPlayer.Droid\obj\Debug\AudioPlayer.Droid.dll.mdb
-C:\Users\Anton\documents\visual studio 2017\Projects\AudioPlayer\AudioPlayer\AudioPlayer.Droid\bin\Debug\AudioPlayer.Droid.dll.mdb
+C:\Users\Anton\Documents\Visual Studio 2017\Projects\AudioPlayer\AudioPlayer\AudioPlayer.Droid\obj\Debug\AudioPlayer.Droid.dll.mdb
+C:\Users\Anton\Documents\Visual Studio 2017\Projects\AudioPlayer\AudioPlayer\AudioPlayer.Droid\bin\Debug\AudioPlayer.Droid.dll.mdb

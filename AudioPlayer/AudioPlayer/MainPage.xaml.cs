@@ -14,9 +14,7 @@ namespace AudioPlayer
 
             mainMenu.ItemSelected += OnItemSelected;
 
-            FileScanner f = new FileScanner();
-            List<string> l = new List<string>();
-            f.GetDirectory(l);
+            
         }
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
