@@ -8,6 +8,17 @@ namespace AudioPlayer
 {
     class FileScanner
     {
+
+        public async void Start(List<string> Songs)
+        {
+            List<string> external = new List<string>();
+            List<string> internalSt = new List<string>();
+            GetDirectory(external);
+            GetDirectory(internalSt, Android.OS.Environment.ExternalStorageDirectory.AbsolutePath);
+            Songs.AddRange(external);
+            Songs.AddRange(internalSt);
+        }
+
         public async void GetDirectory(List<string> songs, string path = "/storage")
         {
             List<string> a = new List<string>();
