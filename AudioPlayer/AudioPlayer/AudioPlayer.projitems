@@ -12,7 +12,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)AudoiParams.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AudioData\AudioProperties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AudioData\AudioParams.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataSourceConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -20,10 +21,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)ModelView\AllMusicViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelView\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelView\MainPageModelView.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelView\PlayerModelView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\FileScanner.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\FlyoutMenuModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\IFileWorker.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Model\Song.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\PlayerModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)View\AlbumView.xaml.cs">
       <DependentUpon>AlbumView.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -38,6 +40,10 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)View\FoldersView.xaml.cs">
       <DependentUpon>FoldersView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)View\PlayerView.xaml.cs">
+      <DependentUpon>PlayerView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -71,6 +77,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\ArtistsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)View\PlayerView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

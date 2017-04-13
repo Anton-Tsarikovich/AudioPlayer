@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using Android;
 using Android.Support.V4.App;
+using Xamarin.Forms;
 
 namespace AudioPlayer.Droid
 {
@@ -19,7 +20,7 @@ namespace AudioPlayer.Droid
 			base.OnCreate (bundle);
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
-			LoadApplication (new App());
+            LoadApplication (new App());
             Verify();
 		}
 

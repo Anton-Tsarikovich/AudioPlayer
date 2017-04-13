@@ -1,8 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
+using System.ComponentModel;
 
 namespace AudioPlayer
 {
@@ -11,7 +12,12 @@ namespace AudioPlayer
 #region list
         public List<string> Songs { get; set; }
 
-        public ObservableCollection<Song> SongList { get; set; }
+        public ObservableCollection<AudioProperties> SongList { get; set; }
+        private FileScanner f;
+        public ICommand Play { get; set; }
+        public INavigation Navigation { get; set; }
+
+
 #endregion
 
         private bool isBusy;
@@ -49,15 +55,17 @@ namespace AudioPlayer
 
             LoadTrackCommand.ChangeCanExecute();
 #region scan
-            FileScanner f = new FileScanner();
-            Songs.Clear();
-            SongList.Clear();
-            f.Start(Songs);
-            foreach(var i in Songs)
+
+            await Task.Run(() =>
             {
-                SongList.Add(new Song { SongPath = i });
-                AudoiParams.GetParam(i);
-            }
+                Songs.Clear();
+                SongList.Clear();
+                f.Start(Songs);
+                foreach (var i in Songs)
+                {
+                    SongList.Add(AudioParams.GetParam(i));
+                }
+            });
 
 #endregion
 
@@ -69,8 +77,23 @@ namespace AudioPlayer
         public AllMusicViewModel()
         {
             Songs = new List<string>();
-            SongList = new ObservableCollection<Song>();
-           
+            SongList = new ObservableCollection<AudioProperties>();
+            f = new FileScanner();
+            Play = new Command(OnPlayAsync);
+
+        }
+
+        private async void OnPlayAsync(object track)
+        {
+            AudioProperties a = track as AudioProperties;
+            await Navigation.PushAsync(new PlayerView(new PlayerModelView(a.TrackPath)));
         }
     }
 }
+
+
+
+
+
+
+

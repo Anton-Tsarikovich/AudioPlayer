@@ -13,7 +13,7 @@ namespace AudioPlayer
 		{
 			InitializeComponent();
 
-			MainPage = new AudioPlayer.MainPage();
+            MainPage = new MainPage();
 		}
 
 		protected override void OnStart ()

@@ -135,5 +135,6 @@ C:\Users\Anton\Documents\Диплом\AudioPlayer\AudioPlayer\AudioPlayer.Droid\
 C:\Users\Anton\Documents\Диплом\AudioPlayer\AudioPlayer\AudioPlayer.Droid\obj\Debug\android\assets\Xamarin.Forms.Core.dll.mdb
 C:\Users\Anton\Documents\Диплом\AudioPlayer\AudioPlayer\AudioPlayer.Droid\obj\Debug\android\assets\Xamarin.Forms.Platform.Android.dll.mdb
 C:\Users\Anton\Documents\Диплом\AudioPlayer\AudioPlayer\AudioPlayer.Droid\obj\Debug\android\assets\Xamarin.Forms.Xaml.dll.mdb
+C:\Users\Anton\Documents\Диплом\AudioPlayer\AudioPlayer\AudioPlayer.Droid\obj\Debug\AudioPlayer.Droid.View.PlayerView.xaml.g.cs
 C:\Users\Anton\Documents\Диплом\AudioPlayer\AudioPlayer\AudioPlayer.Droid\obj\Debug\AudioPlayer.Droid.dll.mdb
 C:\Users\Anton\Documents\Диплом\AudioPlayer\AudioPlayer\AudioPlayer.Droid\bin\Debug\AudioPlayer.Droid.dll.mdb
