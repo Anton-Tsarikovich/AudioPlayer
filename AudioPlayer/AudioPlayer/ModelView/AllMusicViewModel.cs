@@ -52,10 +52,11 @@ namespace AudioPlayer
             FileScanner f = new FileScanner();
             Songs.Clear();
             SongList.Clear();
-            f.GetDirectory(Songs);
+            List<string> a = new List<string>();
+            f.GetDirectory(a);
+            Songs.AddRange(a);
             foreach(var i in Songs)
             {
-
                 SongList.Add(new Song { SongPath = i });
             }
 #endregion
