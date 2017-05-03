@@ -12,6 +12,7 @@ namespace AudioPlayer
             BindingContext = new AllMusicViewModel() { Navigation = this.Navigation };
 
 		}
+        
 
         private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {

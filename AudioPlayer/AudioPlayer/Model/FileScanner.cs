@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AudioPlayer.SQLite;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace AudioPlayer
 {
-    class FileScanner
+    public class FileScanner
     {
-
         public async void Start(List<string> Songs)
         {
             List<string> external = new List<string>();
@@ -19,29 +19,29 @@ namespace AudioPlayer
             Songs.AddRange(internalSt);
         }
 
-        public async void GetDirectory(List<string> songs, string path = "/storage")
+        public void GetDirectory(List<string> songs, string path = "/storage")
         {
-            List<string> a = new List<string>();
-            List<string> b = new List<string>();
+            List<string> directory = new List<string>();
+            List<string> file = new List<string>();
             try
             {
-                a = (from filepath in Directory.EnumerateDirectories(path).AsParallel()
+                directory = (from filepath in Directory.EnumerateDirectories(path).AsParallel()
                      select Path.GetFullPath(filepath)).ToList();
-                b = (from filepath in Directory.EnumerateFiles(path).AsParallel()
+                file = (from filepath in Directory.EnumerateFiles(path).AsParallel()
                      select Path.GetFullPath(filepath)).ToList();
             }
             catch(Exception e)
             {
-
+                //throw new Exception("Some exception in scanning");
             }
             List<string> result = new List<string>();
-            result.AddRange(a);
-            result.AddRange(b);
-            List<string> x = await ScanSubDirs(songs, result);
-            songs.AddRange(x);
+            result.AddRange(directory);
+            result.AddRange(file);
+            List<string> songPath = ScanSubDirs(songs, result);
+            songs.AddRange(songPath);
         }
 
-        public async Task<List<string>> ScanSubDirs(List<string> songs, List<string> rootDirectory)
+        public List<string> ScanSubDirs(List<string> songs, List<string> rootDirectory)
         {
 
             List<string> songList = new List<string>();
@@ -53,21 +53,21 @@ namespace AudioPlayer
                 }
                 else
                 {
-                    if(await CheckPattern(subDir.ToString()))
+                    if(CheckPattern(subDir.ToString()))
                     {
                         songList.Add(subDir);
                     }
                 }
             }
-            return await Task.FromResult(songList);
+            return songList;
         }
 
-        private async Task<bool> CheckPattern(string songName)
+        private bool CheckPattern(string songName)
         {
             const string mp3Pattern = ".mp3";
-            const string flacPattern = ".flac";
+           // const string flacPattern = ".flac";
 
-            return await Task.FromResult(songName.EndsWith(mp3Pattern) || songName.EndsWith(flacPattern));
+            return songName.EndsWith(mp3Pattern);
         }
     }
 }

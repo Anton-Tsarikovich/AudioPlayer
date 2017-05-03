@@ -13,7 +13,6 @@ namespace AudioPlayer
             BindingContext = new MainPageModelView();
 
             mainMenu.ItemSelected += OnItemSelected;
-
             
         }
 

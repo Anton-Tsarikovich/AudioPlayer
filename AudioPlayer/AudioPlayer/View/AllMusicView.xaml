@@ -6,12 +6,12 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <local:DataSourceConverter x:Key="DataSourceConverter" />
-
             <Style x:Key="EmptyList" TargetType="Label">
                 <Setter Property="TextColor" Value="Red" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
+    
     <ContentPage.Content>
         <ListView ItemsSource="{Binding SongList}"
                   IsPullToRefreshEnabled="True"

@@ -4,10 +4,9 @@
              x:Class="AudioPlayer.ArtistsView">
 
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Тут должен быть список всех исполнителей">
-                
-            </Label>
-        </StackLayout>
+        <ListView IsPullToRefreshEnabled="True"
+                 RefreshCommand="{Binding LoadTrackCommand}"
+                 IsRefreshing="{Binding IsBusy, Mode=OneWay}">
+        </ListView>
     </ContentPage.Content>
 </ContentPage>

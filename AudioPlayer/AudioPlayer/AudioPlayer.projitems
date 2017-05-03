@@ -26,6 +26,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Model\FlyoutMenuModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\IFileWorker.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Model\PlayerModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SQLite\MusicRepository.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SQLite\SQLiteAsyncDroid.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)View\AlbumView.xaml.cs">
       <DependentUpon>AlbumView.xaml</DependentUpon>
       <SubType>Code</SubType>

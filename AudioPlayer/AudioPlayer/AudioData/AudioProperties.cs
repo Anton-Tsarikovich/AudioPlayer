@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using AudioPlayer.SQLite;
+using SQLite;
 
 namespace AudioPlayer
 {
+    [Table(nameof(AudioProperties))]
     public class AudioProperties
     {
         private string trackPath { get; set; }
@@ -11,7 +14,9 @@ namespace AudioPlayer
         private string album { get; set; }
         private string artist { get; set; }
         private string bitrate { get; set; }
+        private int id { get; set; }
 
+        [NotNull, MaxLength(250), Unique]
         public string TrackPath
         {
             get { return trackPath; }
@@ -21,6 +26,7 @@ namespace AudioPlayer
             }
         }
 
+        [MaxLength(250)]
         public string Title
         {
             get { return title; }
@@ -29,7 +35,7 @@ namespace AudioPlayer
                 title = value;
             }
         }
-
+        [MaxLength(250)]
         public string Album
         {
             get { return album; }
@@ -38,7 +44,7 @@ namespace AudioPlayer
                 album = value;
             }
         }
-
+        [NotNull, MaxLength(250)]
         public string Artist
         {
             get { return artist; }
@@ -48,12 +54,23 @@ namespace AudioPlayer
             }
         }
 
+        [MaxLength(250)]
         public string Bitrate
         {
             get { return bitrate; }
             set
             {
                 bitrate = value;
+            }
+        }
+
+        [PrimaryKey, AutoIncrement, Unique]
+        public int Id
+        {
+            get { return id; }
+            set
+            {
+                id = value;
             }
         }
     }
