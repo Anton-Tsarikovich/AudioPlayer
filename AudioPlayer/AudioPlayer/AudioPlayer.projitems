@@ -12,13 +12,17 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)AudioData\Album.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)AudioData\Artist.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AudioData\AudioProperties.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)AudioData\AudioParams.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DataSourceConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ModelView\AlbumViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelView\AllMusicViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ModelView\ArtistsViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelView\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelView\MainPageModelView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ModelView\PlayerModelView.cs" />

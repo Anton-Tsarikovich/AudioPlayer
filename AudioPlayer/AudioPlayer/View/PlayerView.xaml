@@ -2,7 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AudioPlayer.PlayerView">
-    <StackLayout>
-        <Button Text="{Binding PlayButtonText}" Command="{Binding PlayCommand}" VerticalOptions="End"/>
-    </StackLayout>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <StackLayout Grid.Row="1" Orientation="Horizontal">
+            <Button HorizontalOptions="StartAndExpand" Image="PreviousTrack.png"/>
+            <Button Command="{Binding PlayCommand}" HorizontalOptions="CenterAndExpand" Image="{Binding playPauseImage}"/>
+            <Button HorizontalOptions="EndAndExpand" Image="NextTrack.png"/>
+        </StackLayout>
+    </Grid>
 </ContentPage>

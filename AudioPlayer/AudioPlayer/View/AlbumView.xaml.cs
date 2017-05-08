@@ -12,7 +12,14 @@ namespace AudioPlayer
 	{
 		public AlbumView ()
 		{
-			InitializeComponent ();
-		}
-	}
+            InitializeComponent();
+            BindingContext = new AlbumViewModel();
+        }
+
+        private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            Album a = e.Item as Album;
+            Navigation.PushAsync(new AllMusicView(new AllMusicViewModel(a)));
+        }
+    }
 }

@@ -13,11 +13,15 @@
     </ContentPage.Resources>
     
     <ContentPage.Content>
-        <ListView ItemsSource="{Binding SongList}"
+        <ListView CachingStrategy="RecycleElement"
+                  ItemsSource="{Binding SongList}"
                   IsPullToRefreshEnabled="True"
                   RefreshCommand="{Binding LoadTrackCommand}"
                   IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                  ItemTapped="ListView_ItemTapped"
+                  ItemTapped="ListView_ItemSelected"
+                  SelectedItem="{Binding SelectedTrack}"
+                  RowHeight="50"
+                  
                   >
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -26,9 +30,14 @@
                         <MenuItem Text="{Binding TrackPath}" />
                     </ViewCell.ContextActions>
                         <ViewCell.View>
-                            <StackLayout>
-                                <Label Text="{Binding Title}" FontSize="Medium"/>
-                                <Label Text="{Binding Artist}" FontSize="Micro"/>
+                            <StackLayout Orientation="Vertical">
+                                <StackLayout Orientation="Horizontal">
+                                    <!--Image Source="{Binding image}"/-->
+                                    <StackLayout Orientation="Vertical">
+                                        <Label Text="{Binding Title}" FontSize="Medium"/>
+                                        <Label Text="{Binding Artist}" FontSize="Micro"/>
+                                    </StackLayout>
+                                </StackLayout>
                             </StackLayout>
                         </ViewCell.View>
                     </ViewCell>

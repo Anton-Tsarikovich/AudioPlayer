@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using Xamarin.Forms;
 
 namespace AudioPlayer
@@ -26,6 +27,11 @@ namespace AudioPlayer
                 new FlyoutMenuModel {Title = "Исполнители", TargetType = typeof(ArtistsView)},
                 new FlyoutMenuModel {Title = "Папки", TargetType = typeof(FoldersView)} 
             };
+        }
+
+        protected override void UpdateSongList()
+        {
+            throw new NotImplementedException();
         }
     }
 }

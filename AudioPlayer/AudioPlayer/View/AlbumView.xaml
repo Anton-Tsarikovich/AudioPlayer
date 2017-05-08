@@ -6,7 +6,21 @@
     <ContentPage.Content>
         <ListView IsPullToRefreshEnabled="True"
                  RefreshCommand="{Binding LoadTrackCommand}"
-                 IsRefreshing="{Binding IsBusy, Mode=OneWay}">
+                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                 ItemsSource="{Binding Albums}"
+                 ItemTapped="ListView_ItemTapped"
+                  >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding AlbumName}" FontSize="Medium"/>
+                            </StackLayout>
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
     </ContentPage.Content>
 </ContentPage>

@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using System.Text;
 using FreshMvvm;
 
 namespace AudioPlayer
@@ -13,11 +14,10 @@ namespace AudioPlayer
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public ObservableCollection<AudioProperties> SongList { get; set; }
 
         private bool isBusy;
         private Command loadTrackCommand;
-        private MusicRepository musicDatabase;
+        protected MusicRepository musicDatabase;
         private FileScanner fileScanner;
 
         public bool IsBusy
@@ -35,14 +35,6 @@ namespace AudioPlayer
         {
             musicDatabase = new MusicRepository(SQLiteAsyncDroid.GetDatabasePath("Songs.db"));
             fileScanner = new FileScanner();
-            SongList = new ObservableCollection<AudioProperties>();
-            List<AudioProperties> qq = new List<AudioProperties>();
-            qq = musicDatabase.GetAllMusic();
-            foreach (var i in qq)
-            {
-                SongList.Add(i);
-            }
-
         }
         
 
@@ -58,6 +50,7 @@ namespace AudioPlayer
 
         }
 
+        
         private async void ExecuteLoad()
         {
             if (IsBusy) { return; }
@@ -68,15 +61,7 @@ namespace AudioPlayer
 
             await Task.Run(() =>
             {
-                List<string> songs = new List<string>();
-                fileScanner.Start(songs);
-                SongList.Clear();
-                foreach (var i in songs)
-                {
-                    SongList.Add(AudioParams.GetParam(i));
-                    musicDatabase.CreateTrack(AudioParams.GetParam(i));
-                }
-                List<AudioProperties> lol = new List<AudioProperties>();
+                UpdateSongList();
             });
             
             //await ScanMem();
@@ -86,24 +71,12 @@ namespace AudioPlayer
             LoadTrackCommand.ChangeCanExecute();
         }
 
-        protected async Task<ObservableCollection<AudioProperties>> ScanMem()
-        {
-            List<string> songs = new List<string>();
-            fileScanner.Start(songs);
-            foreach (var i in songs)
-            {
-                SongList.Add(AudioParams.GetParam(i));
-                //musicDatabase.CreateTrack(AudioParams.GetParam(i));
-            }
-            List<AudioProperties> lol = new List<AudioProperties>();
-           /* lol = musicDatabase.GetAllMusic();
-            SongList.Clear();
-            foreach (var i in lol)
-            {
-                SongList.Add(i);
-            }*/
+        protected abstract void UpdateSongList();
 
-            return SongList;
+        protected void ScanMemory(List<string> songs)
+        {
+            fileScanner.Start(songs);
+
         }
 
 

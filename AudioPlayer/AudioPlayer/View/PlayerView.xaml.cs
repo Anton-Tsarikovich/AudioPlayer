@@ -18,7 +18,6 @@ namespace AudioPlayer
             InitializeComponent();
             ViewModel = vm;
             BindingContext = ViewModel;
-
         }
 	}
 }

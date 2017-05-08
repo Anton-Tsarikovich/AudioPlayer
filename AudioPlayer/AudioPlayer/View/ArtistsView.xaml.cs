@@ -13,6 +13,13 @@ namespace AudioPlayer
 		public ArtistsView ()
 		{
 			InitializeComponent ();
-		}
-	}
+            BindingContext = new ArtistsViewModel() { Navigation = this.Navigation };
+        }
+
+        private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            Artist a = e.Item as Artist;
+            Navigation.PushAsync(new AllMusicView(new AllMusicViewModel(a)));
+        }
+    }
 }

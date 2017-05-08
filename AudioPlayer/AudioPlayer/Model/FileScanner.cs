@@ -1,14 +1,18 @@
-﻿using AudioPlayer.SQLite;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace AudioPlayer
 {
     public class FileScanner
     {
+
+        static string mp3Pattern = ".mp3";
+        static string androidFolder = "Android";
+        static string dataFolder = "data";
+        static string photoFolder = "DCIM";
+
         public async void Start(List<string> Songs)
         {
             List<string> external = new List<string>();
@@ -21,6 +25,10 @@ namespace AudioPlayer
 
         public void GetDirectory(List<string> songs, string path = "/storage")
         {
+            if(CheckSystemFolder(path))
+            {
+                return;
+            }
             List<string> directory = new List<string>();
             List<string> file = new List<string>();
             try
@@ -64,10 +72,15 @@ namespace AudioPlayer
 
         private bool CheckPattern(string songName)
         {
-            const string mp3Pattern = ".mp3";
+          
            // const string flacPattern = ".flac";
 
             return songName.EndsWith(mp3Pattern);
+        }
+
+        private bool CheckSystemFolder(string path)
+        {
+            return path.EndsWith(androidFolder) || path.EndsWith(dataFolder) || path.EndsWith(photoFolder);
         }
     }
 }

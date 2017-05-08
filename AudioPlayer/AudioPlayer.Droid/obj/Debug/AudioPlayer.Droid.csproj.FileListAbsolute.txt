@@ -154,5 +154,9 @@ C:\Users\Anton\Documents\Диплом\AudioPlayer\AudioPlayer\AudioPlayer.Droid\
 C:\Users\Anton\Documents\Диплом\AudioPlayer\AudioPlayer\AudioPlayer.Droid\bin\Debug\FreshMvvm.dll
 C:\Users\Anton\Documents\Диплом\AudioPlayer\AudioPlayer\AudioPlayer.Droid\bin\Debug\FreshMvvm.dll.mdb
 C:\Users\Anton\Documents\Диплом\AudioPlayer\AudioPlayer\AudioPlayer.Droid\obj\Debug\android\assets\FreshMvvm.dll.mdb
+C:\Users\Anton\Documents\Диплом\AudioPlayer\AudioPlayer\AudioPlayer.Droid\obj\Debug\res\drawable\trebleclef.png
+C:\Users\Anton\Documents\Диплом\AudioPlayer\AudioPlayer\AudioPlayer.Droid\obj\Debug\res\drawable\previoustrack.png
+C:\Users\Anton\Documents\Диплом\AudioPlayer\AudioPlayer\AudioPlayer.Droid\obj\Debug\res\drawable\nexttrack.png
+C:\Users\Anton\Documents\Диплом\AudioPlayer\AudioPlayer\AudioPlayer.Droid\obj\Debug\res\drawable\play.png
 C:\Users\Anton\Documents\Диплом\AudioPlayer\AudioPlayer\AudioPlayer.Droid\obj\Debug\AudioPlayer.Droid.dll.mdb
 C:\Users\Anton\Documents\Диплом\AudioPlayer\AudioPlayer\AudioPlayer.Droid\bin\Debug\AudioPlayer.Droid.dll.mdb
